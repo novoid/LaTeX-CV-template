@@ -3,7 +3,7 @@
 
 ** Purpose of This Project
 
-This is a generic template for [[http://en.wikipedia.org/wiki/LaTeX][LaTeX]] documents using the [[http://www.komascript.de/][KOMA Script]]
+[[https://github.com/novoid/LaTeX-CV-template][This is a generic template]] for [[http://en.wikipedia.org/wiki/LaTeX][LaTeX]] documents using the [[http://www.komascript.de/][KOMA Script]]
 class [[https://ctan.org/pkg/koma-moderncvclassic?lang=en][koma-moderncvclassic]].
 
 The target audience is somebody with LaTeX-knowledge who wants to have
@@ -57,12 +57,10 @@ This template is licensed under a [[https://creativecommons.org/licenses/by-sa/3
 - You can make commercial use of the template.
 - In case you modify this template and share the derived template: You
   must attribute the template such that you do not remove
-  (co-)authorship of Karl Voit and you must not remove the URL to [[https://github.com/novoid/LaTeX-KOMA-template][the
+  (co-)authorship of Karl Voit and you must not remove the URL to [[https://github.com/novoid/LaTeX-CV-template][the
   original repository on github]].
 - If you alter, transform, or build a new template upon this template,
-  you may distribute the resulting template only under the same or
-  similar license to this one.
+  you may distribute the resulting template only under the same or similar license to this one.
 - There are *no restrictions* of any kind, however, related to the
   resulting (PDF) document!
-- You may remove the colophon (but it's not recommended).
 
