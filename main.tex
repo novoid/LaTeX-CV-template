@@ -1,0 +1,243 @@
+%% Template authored by Karl Voit and licensed under CC BY-SA 3.0
+\documentclass[%
+fontsize=11pt,%
+a4paper,%
+pagesize,%
+%headinclude,footinclude,%
+headings=normal,%
+pdftex,%
+DIV=14,%
+]{scrartcl}
+%\usepackage[left=2cm,right=2cm,top=3cm,bottom=5cm]{geometry} % page layout
+\usepackage{scrpage2}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[ngerman]{babel}
+\usepackage[german=quotes]{csquotes}
+\usepackage{ae,aecompl} % better Fonts
+
+\tolerance=200 % white space
+\clubpenalty = 1000 % orphans
+\widowpenalty = 1000 % widows
+
+%% here ist the symlink-file that points to either "de.tex" or "en.tex"
+\input{language}
+%% with the following commands, you can put things into the German or
+%% the English version only:
+\newcommand{\en}[1]{\opt{en}{#1}}
+\newcommand{\de}[1]{\opt{de}{#1}}
+
+% ===========================
+%    VARIABLES
+% ===========================
+%    must be defined, BEFORE koma-moderncvclassic is loaded!
+
+\newcommand*{\firstname}{FIRSTNAME}
+\newcommand*{\familyname}{LASTNAME}
+
+% address; not needed variables should be commented out
+\renewcommand*{\title}{curriculum vitae of \firstname \lastname}% für PDF
+\newcommand*{\acadtitle}{\de{DI~Dr.\,techn.}}
+\newcommand*{\addressstreet}{STREET~42}
+\newcommand*{\city}{CITY}
+\newcommand*{\addresscity}{A--1234~\city}
+\newcommand*{\address}[2]{\addressstreet{#1}\addresscity{#2}}
+\newcommand*{\mobile}{0043\,/\,123\,/\,45\,67\,890}
+%\newcommand*{\phone}{}
+%\newcommand*{\faxnr}{}
+\newcommand*{\email}{\en{contact}\de{Bewerbung}@EXAMPLE.COM}%%
+%\newcommand*{\extrainfo}{}
+%\renewcommand*{\quote}{}
+
+\de{\newcommand*{\extrainfo}{Geboren~am~1.\,Jänner~1970 österreichische~Staatsbürgerschaft}}
+\en{\newcommand*{\extrainfo}{Born~on~Jannuary~1\raisebox{1ex}{st}~1970, Austrian~Nationality}}
+
+% ===========================
+% Maybe you don't need to change the following variables:
+% ===========================
+
+\newcommand*{\ac}[1]{\mbox{#1}}
+\newcommand{\vkURL}[1]{\href{#1}{#1}}
+\newcommand{\ferialjob}[1]{\de{Ferialpraxis}\en{Internship}\\ \textsl{#1}}
+\newcommand{\tutorium}[1]{\de{Tutorium}\en{Tutor}\\ \textsl{#1}}
+\newcommand{\werksvertrag}[1]{\de{Werksvertrag}\en{Freelance Contract}\\ \textsl{#1}}
+\newcommand{\know}[2]{#1 {\footnotesize(#2)}}
+
+
+% ===========================
+%    KOMA-MODERNCVCLASSIC
+% ===========================
+
+\usepackage[myblue]{koma-moderncvclassic} % color theme as option; default = myblue; other predefined colors that may be used: red, green, blue, cyan, magenta, yellow, black, white, darkgray, gray, lightgray
+
+% picture only for German CV
+\de{\photo[noframe]{25mm}{Phalaenopsis_JPEG.png}}
+% EXAMPLE IMAGE from: https://de.wikipedia.org/wiki/Datei:Phalaenopsis_JPEG.png
+% LICENSE: https://creativecommons.org/licenses/by-sa/2.5/deed.de
+
+
+% ===========================
+%    ADAPTIONS
+% ===========================
+
+%\renewcommand*{\familydefault}{\sfdefault}% default font sans-serif
+%\renewcommand*{\addressfont}{\normalsize\sffamily\mdseries\slshape}% sans-serif font for address, too
+%\renewcommand{\firstnamefont}{\fontsize{24}{26}\sffamily\mdseries\upshape} % name in smaller font
+\newcommand*{\totalpagemark}{\usekomafont{pagenumber}\thepage/\pageref{lastpage}}% for page and pagetotal
+
+\newcommand{\myfromto}[2]{#1\,--\,#2}
+
+\newcommand{\myTUG}{%%
+\de{\href{http://www.TUGraz.at}{Technische Universität Graz}}%%
+\en{\href{http://www.TUGraz.at}{Graz University of Technology}}%%
+}
+
+\newcommand{\mybox}[1]{%%
+\hfill%%
+\parbox{0.95\textwidth}{#1}%%
+}
+
+
+% ===========================
+%    HEAD- AND FOOTLINES
+% ===========================
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ifoot{CV~\firstname~\familyname}
+\ofoot{\totalpagemark}
+%\ihead{}
+%\ohead{}
+
+
+
+%% for using \href{}
+\usepackage{url}
+
+%% graphicx and hyperref is called through moderncv
+
+% ==================================================================
+%       DOCUMENT
+% ==================================================================
+%
+\begin{document}
+\opt{en}{\selectlanguage{\american}}
+\maketitle
+
+\section{\de{Ausbildung}\en{Education}}
+
+\cventry{2014-01}%%  YYYY(-MM)
+{Consulting \en{Course}\de{Kurs}%
+}%% degree/job title
+{Company X}%% institution/employer
+{CITY}%% localization
+{}%%
+{}%% job description
+
+\cventry{\myfromto{2013-01}{2013-12}}%%  YYYY(-MM)
+{\de{Postgradualer Unikurs FIXXME }%
+  \en{Post-graduate course for FIXXME }%
+  \href{http://www.example.com/}{EXAMPLE SCHOOL}%
+}%% degree/job title
+{}%% institution/employer
+{EXAMPLE CITY}%% localization
+{\de{mit Auszeichnung bestanden}\en{with distinction}}%%
+{}%% job description
+
+\cventry{2005-12}%%  YYYY(-MM)
+{%%
+\de{Diplom-Ingenieur der \href{http://www.example.com}{WISSENSCHAFTSDISZIPLIN} (DI) bzw.\ Master of Science}%%
+\en{Master of Science (Dipl.~Ing.)}%%
+}%% degree/job title
+{\myTUG{}}%% institution/employer
+{}%% localization
+{\de{mit Auszeichnung bestanden}\en{with distinction}}%%
+{%
+\de{Magisterarbeit }%%
+\en{Master thesis }%%
+``THIS TITLE''
+}%% job description
+
+
+%% \cventry{}%%  YYYY(-MM)
+%% {}%% degree/job title
+%% {}%% institution/employer
+%% {}%% localization
+%% {}%%
+%% {}%% job description
+
+
+\section{\de{Berufserfahrung}\en{Experience}}
+
+\cventry{\myfromto{2004-01}{2005-08}}%% YYYY
+{MY JOB TITLE}%% degree/job title
+{\href{https://www.example.com}{COMPANY}}%% institution/employer
+{CITY}%% localization
+{}%%
+{\en{
+    Responsibility for all things,
+    recreated universe and the rest}%%
+  \de{
+    Zuständigkeit für alles,
+    habe alles neu gemacht}%%
+}%% job description
+%
+
+\subsection{\de{Dissertation}\en{Ph.\,D. thesis}}
+\cvline{$\bullet$}{``MY PHD TITLE'': \de{Entwicklung der
+    zugrundeliegenden Methodik, der Implementierung und Evaluierung
+    von }%
+  \en{Development of the method, research software implementation and
+    evaluation of }%
+  \href{http://example.org}{FOO BAR}}
+\cvline{$\bullet$}{\de{Betreuung von \ldots}%
+  \en{Supervising \ldots}}
+
+\subsection{\de{Planung und Durchführung von der Lehrveranstaltung ``FOO''}%
+\en{Development, organizing, and conducting the lecture ``FOO''}}
+\cvline{$\bullet$}{\de{Management von \ldots}%
+  \en{Managing \ldots}}
+\cvline{$\bullet$}{\de{Über 400 Studierende pro Semester}%
+  \en{More than 400 students per term}}
+
+%% \cventry{}%%  YYYY(-MM)
+%% {}%% degree/job title
+%% {}%% institution/employer
+%% {}%% localization
+%% {}%%
+%% {}%% job description
+
+
+%% EXAMPLE: yes, you can do this for a specific language only as well:
+%\de{\newpage}
+
+
+\section{\de{Sprachkenntnisse}\en{Languages}}
+\cvlanguage{\de{Deutsch}\en{German}}{\de{Muttersprache}\en{\mbox{Mother~language}}}{}
+\cvlanguage{\de{Englisch}\en{English}}{\de{fließend}\en{fluently}}{}
+
+
+\section{\de{Persönlichkeitsmerkmale}\en{Personality traits}}
+
+\cvline{}{%
+    \de{Ich bin der Beste}
+    \en{I'm the best}
+}
+
+
+\section{\de{Interessen}\en{Hobbies}}
+
+\cvline{}{%
+  \de{Dies und das,~\ldots}
+    \en{This and that~\ldots}}
+
+
+\de{\vfill
+\vfill
+
+  \city, \today
+
+\vfill}
+
+
+\label{lastpage}% needed for computing pagetotal
+\end{document}

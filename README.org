@@ -1,0 +1,68 @@
+
+* Multi-Lingual LaTeX Modern-CV Template
+
+** Purpose of This Project
+
+This is a generic template for [[http://en.wikipedia.org/wiki/LaTeX][LaTeX]] documents using the [[http://www.komascript.de/][KOMA Script]]
+class [[https://ctan.org/pkg/koma-moderncvclassic?lang=en][koma-moderncvclassic]].
+
+The target audience is somebody with LaTeX-knowledge who wants to have
+his/her CV in two languages. By default, this template is using
+English and German.
+
+The template does *not* want to contain each and every trick. It
+should provide a starting point for one type of CV.
+
+** Requirements
+
+This template uses pdflatex and [[http://www.gnu.org/s/make/][GNU make.]] You should be familiar with
+compiling LaTeX documents by yourself. If you are new to LaTeX please
+get basic knowledge from tutorial pages such as [[http://LaTeX.TUGraz.at][this one]].
+
+Since switching languages makes use of symbolic links, *this template
+does not work on Windows machines without further adaptations*.
+
+** What Makes This Template Special?
+
+By using this template, you just have to maintain your CV in one
+single LaTeX file and get two different PDF files for two different
+languages.
+
+** How to Start?
+
+You will need to adapt the following things:
+
+1. Edit the =Makefile= and set the =FIRSTNAME= and the =LASTNAME= variable.
+2. Edit the =main.tex=
+   - Replace the placeholder variables like =FIRSTNAME=.
+   - Replace the example sections with sections that reflect your CV data.
+3. Generate the result PDF files:
+   - =make pdfen= for the English CV only
+   - =make pdfde= for the German CV only
+   - =make all= for both CVs
+
+You can learn about the other helpful make targets by invoking:
+
+#+begin_src sh
+make help
+#+end_src
+
+** License
+
+This template is licensed under a [[https://creativecommons.org/licenses/by-sa/3.0/][Creative Commons
+      Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license]]:
+
+- You can share (to copy, distribute and transmit) this template.
+- You can remix (adapt) this template.
+- You can make commercial use of the template.
+- In case you modify this template and share the derived template: You
+  must attribute the template such that you do not remove
+  (co-)authorship of Karl Voit and you must not remove the URL to [[https://github.com/novoid/LaTeX-KOMA-template][the
+  original repository on github]].
+- If you alter, transform, or build a new template upon this template,
+  you may distribute the resulting template only under the same or
+  similar license to this one.
+- There are *no restrictions* of any kind, however, related to the
+  resulting (PDF) document!
+- You may remove the colophon (but it's not recommended).
+
